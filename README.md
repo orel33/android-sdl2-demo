@@ -21,14 +21,14 @@ useless. So, skip this section.
 First, we need to fulfill some dependencies (not exhaustive list):
 
 ```bash
-$ sudo apt-get install openjdk-8-jdk ant
+sudo apt-get install openjdk-8-jdk ant
 ```
 
 Check your current version of java is JDK 8:
 
 ```bash
-$ java -version 
-$ javac -version 
+java -version 
+javac -version 
 ```
 
 Else, update your `JAVA_HOME` like this: `export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-x64/`
@@ -38,17 +38,17 @@ compressed). Please visit official website, if the following links are not yet
 available.
 
 ```bash
-$ cd $HOME ; mkdir Android ; cd Android
-$ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
-$ wget https://dl.google.com/android/repository/android-ndk-r14b-linux-x86_64.zip
-$ unzip tools_*.zip
-$ unzip android-ndk-*.zip
+cd $HOME ; mkdir Android ; cd Android
+wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
+wget https://dl.google.com/android/repository/android-ndk-r14b-linux-x86_64.zip
+unzip tools_*.zip
+unzip android-ndk-*.zip
 ```
 
 Then, you can launch the SDK Manager to now install the right SDK version:
 
 ```bash
-$ tools/android sdk &
+tools/android sdk &
 ```
 
 Here, you need to select/update/unselect packages in order to have the following list:
@@ -69,7 +69,7 @@ Then, launch (only for the first time) the following script to move
 `$HOME/.android` in a different place to save disk space:
 
 ```bash
-$ ./init-cremi.sh
+./init-cremi.sh
 ```
 
 ## Android Environnement
@@ -91,7 +91,7 @@ At CREMI, just load the following script to set a correct environment in your
 current terminal:
 
 ```bash
-$ source cremi-env.sh
+source cremi-env.sh
 ```
 
 ## Project Structure
@@ -177,14 +177,14 @@ multiple architectures we target (x86, arm, ...)
 The following script will do the job for you.
 
 ```bash
-$ ./download.sh
+./download.sh
 ```
 
 At CREMI, it is better to run the following script, that make link to SDL
 sources instead of downloading it:
 
 ```bash
-$ ./download-cremi.sh
+./download-cremi.sh
 ```
 
 ## Compilation
@@ -229,7 +229,7 @@ To create your own emulator or AVD (Android Virtual Device), launch the
 following command:
 
 ```bash
-$ android avd
+android avd
 ```
 
 Create an AVD with name 'MyPhone'. Set properties with something like 'Nexus 5'
@@ -246,7 +246,7 @@ Assuming you have already create such an emulator named 'MyPhone', you can check
 it is available:
 
 ```bash
-$ emulator -list-avds
+emulator -list-avds
 MyPhone
 ```
 
@@ -259,7 +259,7 @@ emulator -avd MyPhone
 Now, you can deploy you app easily, assuming there is a single AVD running:
 
 ```bash
-$ ant debug install
+ant debug install
 ```
 
 Now, find the 'SDL2 Demo' icon in the Android emulator... Enjoy!
@@ -278,7 +278,7 @@ Now, on your phone, allow this particular computer to debug via the USB cable
 Finally, on the computer run the deployment command:
 
 ```bash
-$ ant debug install
+ant debug install
 ```
 
 ### Android Log & Debug
@@ -286,13 +286,13 @@ $ ant debug install
 Print log written by SDL_Log() routine in your app:
 
 ```bash
-$ adb logcat -s 'SDL/APP'
+adb logcat -s 'SDL/APP'
 ```
 
 Check Android properties:
 
 ```bash
-$ adb shell getprop
+adb shell getprop
 ```
 
 GDB Debug (off-topic)
