@@ -63,7 +63,7 @@ Don't forget to accept ALL Licences when the install process starts!
 
 ## Install Android SDK at CREMI
 
-Clone thsi repository on your home directory at CREMI (University of Bordeaux).
+Clone this repository on your home directory at CREMI (University of Bordeaux).
 
 Then, launch (only for the first time) the following script to move
 `$HOME/.android` in a different place to save disk space:
@@ -178,6 +178,13 @@ The following script will do the job for you.
 
 ```bash
 $ ./download.sh
+```
+
+At CREMI, it is better to run the following script, that make link to SDL
+sources instead of downloading it:
+
+```bash
+$ ./download-cremi.sh
 ```
 
 ## Compilation
